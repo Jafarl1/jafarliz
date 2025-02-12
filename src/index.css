@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap");
 
 * {
   padding: 0;
@@ -7,6 +8,7 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
 }
 :root {
   --dark: #212228;
