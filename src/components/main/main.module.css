@@ -1,0 +1,48 @@
+main {
+  width: 100%;
+
+  h1 {
+    text-align: center;
+    color: rgba(206, 211, 226, 0.85);
+    font-size: 28px;
+    margin: 30px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    span:last-child {
+      color: var(--red);
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 12px;
+
+    div {
+      width: 280px;
+      height: 280px;
+      /* border: 1px solid green; */
+      border-radius: 6px;
+    }
+  }
+}
+
+@media screen and (min-width: 440px) {
+  main {
+    h1 {
+      font-size: 7vw;
+      margin: 50px 25px 100px;
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  main {
+    h1 {
+      font-size: 70px;
+    }
+  }
+}

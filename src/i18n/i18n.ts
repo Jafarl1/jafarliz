@@ -12,6 +12,16 @@ i18n.use(initReactI18next).init({
           blog: "Blog",
           contact: "Contact",
         },
+        mainText: {
+          firstLine: "All in One",
+          secondLine: "Personal Portfolio",
+          thirdLine: [
+            "Web Developer.",
+            "Freelancer.",
+            "Content Writer.",
+            "Instructor.",
+          ],
+        },
       },
     },
     ru: {
@@ -23,6 +33,16 @@ i18n.use(initReactI18next).init({
           blog: "Блог",
           contact: "Контакты",
         },
+        mainText: {
+          firstLine: "Все в одном",
+          secondLine: "Личное портфолио",
+          thirdLine: [
+            "Веб Разработчик.",
+            "Фрилансер.",
+            "Автор Контента",
+            "Инструктор.",
+          ],
+        },
       },
     },
     az: {
@@ -33,6 +53,16 @@ i18n.use(initReactI18next).init({
           projects: "Layihələr",
           blog: "Bloq",
           contact: "Əlaqə",
+        },
+        mainText: {
+          firstLine: "Hamısı bir Arada",
+          secondLine: "Şəxsi Portfel",
+          thirdLine: [
+            "Veb Developer.",
+            "Frilanser.",
+            "Məzmun Yazarı.",
+            "Təlimçi.",
+          ],
         },
       },
     },

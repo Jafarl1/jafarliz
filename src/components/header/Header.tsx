@@ -42,10 +42,15 @@ export default function Header() {
       <h1>{ww > 1220 || ww < 440 ? "Jafarli Zohrab" : "JZ"}</h1>
 
       <div>
-        <nav className={isNavbarVisible ? s.showNavbar : ""}>
+        <nav
+          className={isNavbarVisible ? s.showNavbar : ""}
+          onClick={() => setIsNavbarVisible(false)}
+        >
           {navLinks.map(({ to, icon, label }) => (
-            <NavLink key={to} to={to} onClick={() => setIsNavbarVisible(false)}>
-              <img src={icon} className={s.mobileIcon} alt={label} />
+            <NavLink key={to} to={to}>
+              {ww < 1020 && (
+                <img src={icon} className={s.mobileIcon} alt={label} />
+              )}
               {ww > 440 && <span>{t(`navMenu.${label}`)}</span>}
             </NavLink>
           ))}

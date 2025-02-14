@@ -1,7 +1,6 @@
 header {
   width: 100%;
   height: 60px;
-  background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +15,7 @@ header {
     word-spacing: 6px;
     position: relative;
     font-family: "Orbitron", sans-serif;
-    font-size: 22px;
-    display: inline-block;
-    background: linear-gradient(176deg, #ced3e2 52%, #ff014f 48%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 19px;
   }
 
   div {
@@ -38,7 +33,7 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 0 8vw;
-      background-color: var(--dark);
+      background-color: #00111e;
       box-shadow: 0px 0px 7px var(--light-shadow);
 
       .mobileIcon {
@@ -47,20 +42,23 @@ header {
     }
 
     select {
-      padding: 2px 6px;
+      padding: 3px 8px;
       width: max-content;
       font-size: 18px;
       cursor: pointer;
       border: none;
       border-radius: 4px;
       outline: none;
-      background-color: var(--dark);
+      background-color: transparent;
       color: var(--light);
       box-shadow: 0px 0px 4px 0px var(--light-shadow);
-
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
+
+      option {
+        background-color: var(--dark);
+      }
     }
     select::-ms-expand {
       display: none;
@@ -78,63 +76,51 @@ header {
     justify-content: space-between;
 
     h1 {
-      background: linear-gradient(160deg, #ced3e2 48%, #ff014f 52%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
       font-size: 26px;
     }
 
     div {
       nav {
-        width: 200px;
-        height: fit-content;
+        width: 100%;
+        height: 100vh;
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        padding: 0;
-        top: 60px;
+        padding: 20px 0;
+        top: 0;
         left: 100%;
         opacity: 0;
         transition: 0.7s;
         box-shadow: none;
-
-        .mobileIcon {
-          display: none;
-        }
+        background: rgb(0, 17, 30);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 17, 30, 0.10127801120448177) 0%,
+          rgba(0, 17, 30, 0.9780287114845938) 65%
+        );
+        backdrop-filter: blur(2px);
 
         a {
           width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+
+          .mobileIcon {
+            height: 22px;
+          }
 
           span {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             color: var(--light);
-            font-size: 18px;
-            padding: 15px;
+            font-size: 20px;
+            padding: 20px 0;
             position: relative;
             overflow: hidden;
-            transition: 0.5s;
-
-            &::after {
-              content: "";
-              position: absolute;
-              left: -5%;
-              bottom: 40%;
-              width: 70%;
-              height: 2px;
-              background-color: var(--red);
-              transform: rotate(-8deg) translateX(-100%);
-              transition: 0.1s;
-            }
+            transition: 0.7s;
 
             &:hover {
               color: var(--red);
-
-              &::after {
-                transform: rotate(-8deg) translateX(155%) translateY(155%);
-              }
             }
           }
         }
@@ -142,9 +128,10 @@ header {
     }
 
     .showNavbar {
-      left: calc(100% - 200px);
+      left: 0;
       opacity: 1;
       box-shadow: -2px 3px 3px 0px var(--light-shadow);
+      z-index: 99;
     }
 
     .burgerMenu {
@@ -197,33 +184,46 @@ header {
       nav {
         width: fit-content;
         height: 60px;
-        padding: 10px;
+        padding: 0 15px;
         position: static;
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
         opacity: 1;
         box-shadow: none !important;
+        background: none;
+        backdrop-filter: none;
 
-        a span {
-          width: max-content;
+        a {
+          span {
+            width: max-content;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: -110%;
+              bottom: 45%;
+              width: 70%;
+              height: 1px;
+              background-color: var(--red);
+              transition: 0.15s;
+            }
+
+            &:hover {
+              color: var(--red);
+
+              &::after {
+                left: 110%;
+              }
+            }
+          }
         }
       }
     }
 
     .burgerMenu {
       display: none;
-    }
-  }
-}
-
-@media screen and (min-width: 1220px) {
-  header {
-    h1 {
-      background: linear-gradient(176deg, #ced3e2 52%, #ff014f 48%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
   }
 }

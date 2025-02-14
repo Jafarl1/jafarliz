@@ -1,11 +1,14 @@
 import Header from "./components/header/Header";
+import Main from "./components/main/Main";
 
 function App() {
   return (
     <>
-      <Header />
       <div className="app">
-        <h1>App</h1>
+        <div className="app-overlay">
+          <Header />
+          <Main />
+        </div>
       </div>
     </>
   );

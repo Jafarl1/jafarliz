@@ -11,15 +11,30 @@
   font-family: "Exo 2", sans-serif;
 }
 :root {
-  --dark: #212228;
+  /* --dark: #212228; */
+  --dark: #00111e;
   --light: #ced3e2;
   --red: #ff014f;
   --light-shadow: rgba(206, 211, 226, 0.5);
 }
 .app {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   overflow: auto;
   background-color: var(--dark);
-  padding: 20px;
+  background-image: url("./assets/images/dark-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .app-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      7deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
 }
