@@ -1,5 +1,5 @@
 import Header from "./components/header/Header";
-import Main from "./components/main/Main";
+import HomePage from "./pages/homePage/HomePage";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="app">
         <div className="app-overlay">
           <Header />
-          <Main />
+          <HomePage />
         </div>
       </div>
     </>
