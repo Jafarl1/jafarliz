@@ -41,3 +41,14 @@
 ::selection {
   background-color: rgba(70, 70, 70, 0.5);
 }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  width: 4px;
+  background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  background-color: var(--red);
+}

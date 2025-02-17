@@ -1,21 +1,9 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { navLinks } from "./navLinks";
 import useWindowWidth from "../../hooks/useWindowWidth/UseWindowWidth";
-import home_icon from "../../assets/icons/headerIcons/home.png";
-import resume_icon from "../../assets/icons/headerIcons/resume.png";
-import projects_icon from "../../assets/icons/headerIcons/projects.png";
-import blog_icon from "../../assets/icons/headerIcons/blog.png";
-import contact_icon from "../../assets/icons/headerIcons/contact.png";
 import s from "./header.module.css";
-
-const navLinks = [
-  { to: "/", icon: home_icon, label: "home" },
-  { to: "/resume", icon: resume_icon, label: "resume" },
-  { to: "/projects", icon: projects_icon, label: "projects" },
-  { to: "/blog", icon: blog_icon, label: "blog" },
-  { to: "/contact", icon: contact_icon, label: "contact" },
-];
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -24,6 +12,8 @@ export default function Header() {
   const [currentLang, setCurrentLang] = useState(
     sessionStorage.getItem("lang") ?? "en"
   );
+
+  const { pathname } = useLocation();
 
   const toggleNavbar = () => setIsNavbarVisible((prev) => !prev);
 
@@ -46,12 +36,20 @@ export default function Header() {
           className={isNavbarVisible ? s.showNavbar : ""}
           onClick={() => setIsNavbarVisible(false)}
         >
-          {navLinks.map(({ to, icon, label }) => (
+          {navLinks.map(({ to, icon, active_icon, label }) => (
             <NavLink key={to} to={to}>
               {ww < 1020 && (
-                <img src={icon} className={s.mobileIcon} alt={label} />
+                <img
+                  src={pathname === to ? active_icon : icon}
+                  className={s.mobileIcon}
+                  alt={label}
+                />
               )}
-              {ww > 440 && <span>{t(`navMenu.${label}`)}</span>}
+              {ww > 440 && (
+                <span className={`${pathname === to ? s.navLink_active : ""}`}>
+                  {t(`navMenu.${label}`)}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>

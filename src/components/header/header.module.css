@@ -124,6 +124,9 @@ header {
               color: var(--red);
             }
           }
+          .navLink_active {
+            color: var(--red);
+          }
         }
       }
     }
