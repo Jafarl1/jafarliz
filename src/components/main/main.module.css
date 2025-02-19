@@ -24,7 +24,7 @@ main {
     gap: 15px;
 
     .card {
-      width: 90%;
+      width: 80%;
       border-radius: 6px;
       padding: 40px 30px;
       background-color: #010f1a;
@@ -73,10 +73,6 @@ main {
       justify-content: center;
       align-items: center;
       gap: 20px;
-
-      .card {
-        width: 80%;
-      }
     }
   }
 }
