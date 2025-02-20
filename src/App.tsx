@@ -1,24 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "./components/header/Header";
-import HomePage from "./pages/homePage/HomePage";
+import AppRouter from "./AppRouter";
+import Footer from "./components/footer/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   useEffect(() => {
     AOS.init({
       duration: 600,
@@ -30,20 +17,9 @@ function App() {
   return (
     <>
       <div className="app">
-        {/* <AppRouter /> */}
-
         <Header />
-        <HomePage />
-        <div
-          className={`${
-            scrollPosition < 800 ? "first-app-background" : "hidden"
-          }`}
-        >
-          <div className="background-overlay"></div>
-        </div>
-        <div className="second-app-background">
-          <div className="background-overlay"></div>
-        </div>
+        <AppRouter />
+        <Footer />
       </div>
     </>
   );
